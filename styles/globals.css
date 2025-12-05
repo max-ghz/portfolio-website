@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+    --accent: #00f0ff;
+    --accent-2: #ffdd55;
+    --text: #e6f7ff;
+    --bg: #071019;
+    --panel-bg: #001122;
+    --section-bg: #0a1a2b;
+    --h1-size: 24px;
+    --h2-size: 16px;
+    --font-size: 12px;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Press Start 2P', monospace;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow: hidden; /* hidden blocks scrolling */
+    display: flex;
+    justify-content: center; /* centers horizontally */
+    align-items: center; /* centers vertically */
+}
+
+.container {
+    width: 1000px;
+    display: flex;
+    gap: 20px;
+    margin: 0 auto; /* dodatkowe centrowanie poziome */
+}
+
+.sidebar {
+    flex: 0 0 30%;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.sidebar-section {
+    background-color: var(--section-bg);
+    border: 2px solid var(--accent);
+    padding: 10px;
+}
+
+.sidebar-section h2 {
+    color: var(--accent-2);
+    font-size: var(--h2-size);
+    margin-bottom: 4px;
+}
+
+.sidebar-section ul {
+    list-style: disc inside;
+    padding-left: 0;
+    margin: 0;
+}
+
+.sidebar-section li {
+    margin-bottom: 3px;
+    color: var(--text);
+    font-size: 11px;
+    cursor: default;
+}
+
+.sidebar-section li:hover {
+    color: var(--accent);
+}
+
+.main-content {
+    flex: 1;
+    background-color: var(--bg);
+    padding: 20px;
+    border: 2px solid var(--accent);
+    position: relative; /* for icon positioning */
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: var(--accent);
+    font-size: var(--h1-size);
+    margin-bottom: 8px;
+}
+
+h2 {
+    color: var(--accent-2);
+    font-size: var(--h2-size);
+    margin-bottom: 8px;
+}
+
+.main-content p,
+.main-content li {
+    color: var(--text);
+    line-height: 1.4;
+    font-size: var(--font-size);
+}
+
+.main-content ul {
+    padding-left: 15px;
+}
+
+.main-content a {
+    color: var(--accent);
+    text-decoration: none;
+    position: relative;
+}
+
+.main-content a:hover {
+    color: var(--accent-2);
+    top: -2px;
+    left: 2px;
+}
+
+.main-content a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent);
+    bottom: -2px;
+    left: 0;
+}
+
+.main-content a:hover::after {
+    background-color: var(--accent-2);
+}
+
+.tech-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.tech-tag {
+    background-color: var(--section-bg);
+    color: var(--text);
+    border: 2px solid var(--accent);
+    padding: 2px 6px;
+    font-size: 11px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow:
+        1px 1px 0 #000,
+        -1px -1px 0 #001122;
+}
+
+.tech-tag:hover {
+    color: var(--accent-2);
+    border-color: var(--accent-2);
+    transform: translate(-1px, -1px);
+}
+
+.certificate-section {
+    position: relative; /* icons will be relative to this section */
+}
+
+.certificate-section .corner-icons {
+    position: absolute;
+    bottom: -25px; /* lazy styling */
+    right: -5px;
+    display: flex;
+    gap: 12px;
+}
+
+.corner-icons .icon {
+    color: var(--accent);
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(2px 2px 0 #000000) drop-shadow(-2px -2px 0 #001122);
+    image-rendering: pixelated;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.corner-icons .icon:hover {
+    color: var(--accent-2);
+    transform: translate(-2px, -2px); /* shifted retro effect */
+}
+
+@media (max-width: 500px) {
+    body {
+        zoom: 0.5;
+        transform-origin: top left;
+    }
+}
